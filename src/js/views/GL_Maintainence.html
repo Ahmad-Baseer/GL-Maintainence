@@ -19,7 +19,7 @@
                 <div id="ChildDiv-GL" style="width: 1px; min-width: 100%;">
                   <div id="GL">
                     <oj-c-form-layout max-columns="2" direction="row">
-                      <oj-c-input-number required="true" label-hint="GL ID" value = "{{glId}}"></oj-c-input-number>
+                      <oj-c-input-text required="true" label-hint="GL Number" value = "{{glId}}"></oj-c-input-text>
                       <!-- <span><oj-bind-text value= "[[glId]]"></oj-bind-text></span> -->
                       <oj-c-input-text required="true" label-hint="GL Descrition" value = "{{glDescription}}"></oj-c-input-text>
                     </oj-c-form-layout>
@@ -52,10 +52,10 @@
                 <div id="ChildDiv-buttons" style="width: 1px; min-width: 100%;">
                   <div id="buttons-container">
                     <div>
-                      <oj-c-button id="Save" chroming="callToAction" label="Save"></oj-c-button>
-                      <oj-c-button id="Get" chroming="callToAction" label="Get"></oj-c-button>
-                      <oj-c-button id="Delete" chroming="callToAction" label="Delete"></oj-c-button>
-                      <oj-c-button id="Update" chroming="callToAction" label="Update"></oj-c-button>
+                      <oj-c-button id="Save" chroming="callToAction" label="Save" on-oj-action="[[handleSave]]"></oj-c-button>
+                      <oj-c-button id="Get" chroming="callToAction" label="Get" on-oj-action="[[handleGet]]"></oj-c-button>
+                      <oj-c-button id="Delete" chroming="callToAction" label="Delete" on-oj-action="[[handleDelete]]"></oj-c-button>
+                      <oj-c-button id="Update" chroming="callToAction" label="Update" on-oj-action="[[handleUpdate]]"></oj-c-button>
                     </div>
                   </div>
                 </div>
