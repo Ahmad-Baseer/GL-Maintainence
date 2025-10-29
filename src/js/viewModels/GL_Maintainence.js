@@ -26,6 +26,8 @@ define(['../accUtils',"knockout","require", "exports", "ojs/ojbootstrap",
        */
 
       this.glId = ko.observable(1123);
+      this.glDescription = ko.observable(null);
+      this.glType = ko.observable(null);
       this.connected = () => {
         accUtils.announce('Dashboard page loaded.', 'assertive');
         document.title = "Dashboard";

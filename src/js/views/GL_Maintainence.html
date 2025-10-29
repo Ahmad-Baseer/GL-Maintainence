@@ -4,81 +4,65 @@
  as shown at https://oss.oracle.com/licenses/upl/
  -->
 <div class="oj-hybrid-padding">
-      <div id="ParentAccordion" class="accordion-padding accordion-container">
-        <div id="ChildAccordion" style="width: 1px; min-width: 100%;">
-                    
-          <div id="accordionPage" data-oj-binding-provider="none">
-            <oj-accordion id="a1">
-                <oj-collapsible id="c1">
-                  <h3 slot="header">
-                      <span class="oj-ux-ico-cart oj-ux-icon-size-5x oj-sm-padding-2x-end"></span>
-                      GL Maintainence
-                  </h3>
+  <div id="ParentAccordion" class="accordion-padding accordion-container">
+    <div id="ChildAccordion" style="width: 1px; min-width: 100%;">
                 
-                  <div id="ParentDiv-GL" class="GL-padding GL-container">
-                    <div id="ChildDiv-GL" style="width: 1px; min-width: 100%;">
-                      <div id="GL">
-                        <oj-c-form-layout max-columns="2" direction="row">
-                          <oj-c-input-number required="true" label-hint="GL ID" value = {{glId}}></oj-c-input-number>
-                          <!-- <span><oj-bind-text value= "[[glId]]"></oj-bind-text></span> -->
-                          <oj-c-input-text required="true" label-hint="GL Descrition"></oj-c-input-text>
-                        </oj-c-form-layout>
+      <div id="accordionPage" data-oj-binding-provider="none">
+        <oj-accordion id="a1">
+            <oj-collapsible id="c1">
+              <h3 slot="header">
+                  <span class="oj-ux-ico-cart oj-ux-icon-size-5x oj-sm-padding-2x-end"></span>
+                  GL Maintainence
+              </h3>
+            
+              <div id="ParentDiv-GL" class="GL-padding GL-container">
+                <div id="ChildDiv-GL" style="width: 1px; min-width: 100%;">
+                  <div id="GL">
+                    <oj-c-form-layout max-columns="2" direction="row">
+                      <oj-c-input-number required="true" label-hint="GL ID" value = "{{glId}}"></oj-c-input-number>
+                      <!-- <span><oj-bind-text value= "[[glId]]"></oj-bind-text></span> -->
+                      <oj-c-input-text required="true" label-hint="GL Descrition" value = "{{glDescription}}"></oj-c-input-text>
+                    </oj-c-form-layout>
+                  </div>
+                </div>
+              </div>
 
-                        <!-- <oj-form-layout max-columns="3" direction="row">
-                          <oj-combobox-one
-                            id="combobox"
-                            value="Chrome"
-                            required="true"
-                            label-hint="GL Type"
-                            class="oj-form-control-max-width-md">
-                            <oj-option value="Internet Explorer">Internet Explorer</oj-option>
-                            <oj-option value="Firefox">Firefox</oj-option>
-                            <oj-option value="Chrome">Chrome</oj-option>
-                            <oj-option value="Opera">Opera</oj-option>
-                            <oj-option value="Safari">Safari</oj-option>
-                          </oj-combobox-one>
-                        </oj-form-layout> -->
-                      </div>
+              <div id="ParentDiv-GL-Type" class="GL-Type-padding GL-Type-container">
+                <div id="ChildDiv-GL-Type" style="width: 1px; min-width: 100%;">
+                  <div id="GL_TYPE">
+                    <oj-form-layout max-columns="3" direction="row">
+                      <oj-combobox-one
+                        id="GL_TYPE-combobox"
+                        value="{{glType}}"
+                        required="true"
+                        label-hint="GL Type"
+                        class="oj-form-control-max-width-md">
+                        <oj-option value="Asset GL">Asset GL</oj-option>
+                        <oj-option value="Liability GL">Liability GL</oj-option>
+                        <oj-option value="Income GL">Income GL</oj-option>
+                        <oj-option value="Expense GL">Expense GL</oj-option>
+                        <oj-option value="Equity GL">Equity GL</oj-option>
+                      </oj-combobox-one>
+                    </oj-form-layout>
+                  </div>
+                </div>
+              </div>
+
+              <div id="ParentDiv-buttons" class="buttons-padding buttons-container">
+                <div id="ChildDiv-buttons" style="width: 1px; min-width: 100%;">
+                  <div id="buttons-container">
+                    <div>
+                      <oj-c-button id="Save" chroming="callToAction" label="Save"></oj-c-button>
+                      <oj-c-button id="Get" chroming="callToAction" label="Get"></oj-c-button>
+                      <oj-c-button id="Delete" chroming="callToAction" label="Delete"></oj-c-button>
+                      <oj-c-button id="Update" chroming="callToAction" label="Update"></oj-c-button>
                     </div>
                   </div>
-
-                  <div id="ParentDiv-GL-Type" class="GL-Type-padding GL-Type-container">
-                    <div id="ChildDiv-GL-Type" style="width: 1px; min-width: 100%;">
-                      <div id="GL_TYPE">
-                        <oj-form-layout max-columns="3" direction="row">
-                          <oj-combobox-one
-                            id="GL_TYPE-combobox"
-                            value=""
-                            required="true"
-                            label-hint="GL Type"
-                            class="oj-form-control-max-width-md">
-                            <oj-option value="Asset GL">Asset GL</oj-option>
-                            <oj-option value="Liability GL">Liability GL</oj-option>
-                            <oj-option value="Income GL">Income GL</oj-option>
-                            <oj-option value="Expense GL">Expense GL</oj-option>
-                            <oj-option value="Equity GL">Equity GL</oj-option>
-                          </oj-combobox-one>
-                        </oj-form-layout>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div id="ParentDiv-buttons" class="buttons-padding buttons-container">
-                    <div id="ChildDiv-buttons" style="width: 1px; min-width: 100%;">
-                      <div id="buttons-container">
-                        <div>
-                          <oj-c-button id="Save" chroming="callToAction" label="Save"></oj-c-button>
-                          <oj-c-button id="Get" chroming="callToAction" label="Get"></oj-c-button>
-                          <oj-c-button id="Delete" chroming="callToAction" label="Delete"></oj-c-button>
-                          <oj-c-button id="Update" chroming="callToAction" label="Update"></oj-c-button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                
-                </oj-collapsible>
-            </oj-accordion>
-          </div>          
-        </div>
-      </div>
+                </div>
+              </div>
+            </oj-collapsible>
+        </oj-accordion>
+      </div>          
+    </div>
+  </div>
 </div>
